@@ -23,6 +23,43 @@ public class Calculator implements ActionListener {
         frame.setSize(420, 550);  // Setting the size of the window
         frame.setLayout(null);  // Setting the layout manager to null, using absolute positioning
 
+        textField = new JTextField();  // Creating a text field for displaying inputs and results
+        textField.setBounds(50, 25, 300, 50);  // Setting the position and size of the text field
+        textField.setFont(myFont);  // Setting the font of the text field
+        textField.setEditable(false);  // Making the text field non-editable
+       
+        addButton = new JButton("+");  // Creating a button for addition
+        subButton = new JButton("-");  // Creating a button for subtraction
+        mulButton = new JButton("*");  // Creating a button for multiplication
+        divButton = new JButton("/");  // Creating a button for division
+        decButton = new JButton(".");  // Creating a button for decimal point
+        equButton = new JButton("=");  // Creating a button for equals
+        delButton = new JButton("Delete");  // Creating a button for delete
+        clrButton = new JButton("Clear");  // Creating a button for clear
+
+        //adding buttons to the function buttons array
+        functionButtons[0] = addButton;  
+        functionButtons[1] = subButton;  
+        functionButtons[2] = mulButton; 
+        functionButtons[3] = divButton; 
+        functionButtons[4] = decButton;  
+        functionButtons[5] = equButton;  
+        functionButtons[6] = delButton;  
+        functionButtons[7] = clrButton;  
+
+        for (int i = 0; i < 8; i++) {
+            functionButtons[i].addActionListener(this);  // Adding action listener to function buttons
+            functionButtons[i].setFont(myFont);  // Setting the font of the function buttons
+            functionButtons[i].setFocusable(false);  // Setting focusable to false
+        }
+
+
+
+
+        frame.add(textField);  // Adding the text field to the frame
+
+
+
         // Making the frame visible
         frame.setVisible(true);
     }
