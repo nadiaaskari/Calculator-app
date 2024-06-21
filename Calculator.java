@@ -53,6 +53,12 @@ public class Calculator implements ActionListener {
             functionButtons[i].setFocusable(false);  // Setting focusable to false
         }
 
+        for (int i = 0; i < 10; i++) {
+            numberButtons[i] = new JButton(String.valueOf(i));  // Creating buttons for numbers 0-9
+            numberButtons[i].addActionListener(this);  // Adding action listener to number buttons
+            numberButtons[i].setFont(myFont);  // Setting the font of the number buttons
+            numberButtons[i].setFocusable(false);  // Setting focusable to false
+        }
 
 
 
