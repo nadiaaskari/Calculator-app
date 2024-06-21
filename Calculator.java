@@ -60,11 +60,39 @@ public class Calculator implements ActionListener {
             numberButtons[i].setFocusable(false);  // Setting focusable to false
         }
 
+        delButton.setBounds(50, 430, 145, 50);  // Setting the position and size of the delete button
+        clrButton.setBounds(205, 430, 145, 50);  // Setting the position and size of the clear button
 
+    
+        frame.add(delButton);  // Adding the delete button to the frame
+        frame.add(clrButton);  // Adding the clear button to the frame
+
+        panel = new JPanel();  // Creating a panel to hold the buttons
+        panel.setBounds(50, 100, 300, 300);  // Setting the position and size of the panel
+        panel.setLayout(new GridLayout(4, 4, 10, 10));  // Setting the layout of the panel
+        panel.add(numberButtons[1]);  // Adding the number buttons to the panel
+        panel.add(numberButtons[2]);
+        panel.add(numberButtons[3]);
+        panel.add(addButton);
+        panel.add(numberButtons[4]);
+        panel.add(numberButtons[5]);
+        panel.add(numberButtons[6]);
+        panel.add(subButton);
+        panel.add(numberButtons[7]);
+        panel.add(numberButtons[8]);
+        panel.add(numberButtons[9]);
+        panel.add(mulButton);
+        panel.add(decButton);
+        panel.add(numberButtons[0]);
+        panel.add(equButton);
+        panel.add(divButton);   
+        
+
+
+        panel.setBackground(Color.GRAY);  // Setting the background color of the panel
+        frame.add(panel);
 
         frame.add(textField);  // Adding the text field to the frame
-
-
 
         // Making the frame visible
         frame.setVisible(true);
